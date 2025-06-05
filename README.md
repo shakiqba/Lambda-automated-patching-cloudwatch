@@ -1,17 +1,36 @@
-# Lambda-automated-patching-cloudwatch
+# 🚀 AWS Lambda Monitoring with Terraform
 
-This Terraform script:
+This Terraform script automates the creation of **CloudWatch monitoring and alerting** for an AWS Lambda function.
 
-Creates a CloudWatch dashboard to monitor a specific AWS Lambda function's error metrics.
+## 🧰 Features
 
-Adds an alarm that triggers when errors ≥ 1 within a 2-minute window, using the Sum statistic.
+- 📊 **CloudWatch Dashboard**  
+  Automatically creates a dashboard to visualize the **`Errors` metric** for a specified Lambda function.
 
-Sends notifications to an existing SNS topic: Automated_Patching_CloudWatch_Alarms_Topic.
+- 🚨 **CloudWatch Alarm**  
+  Sets up an alarm that triggers when **errors are greater than or equal to 1** within a **2-minute period**, using the `Sum` statistic.
 
-Uses variables for dashboard name, alarm name, Lambda function name, and SNS topic ARN to make it reusable and configurable at runtime.
+- 📣 **SNS Notifications**  
+  Sends alarm notifications to an existing SNS topic:  
+  `Automated_Patching_CloudWatch_Alarms_Topic`
 
-It provides automated monitoring and alerting for Lambda errors in a customizable and reusable way.
+- 🛠️ **Configurable Inputs**  
+  All key parameters are defined as variables:
+  - `dashboard_name`
+  - `alarm_name`
+  - `lambda_function_name`
+  - `sns_topic_arn`
 
-To execute the terraform code run below command
+## ✅ Benefits
 
-terraform apply -var-file="terraform.tfvars"  
+- 🔁 **Reusable** — Easily apply to multiple Lambda functions.
+- ⚙️ **Customizable** — Adjust names and targets through variables.
+- 👨‍💻 **Minimal Effort** — One command to deploy.
+
+## ▶️ How to Use
+
+1. Configure your `terraform.tfvars` file with the required variables.
+2. Run the following command:
+
+```bash
+terraform apply -var-file="terraform.tfvars"
