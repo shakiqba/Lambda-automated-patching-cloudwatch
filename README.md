@@ -11,3 +11,7 @@ Sends notifications to an existing SNS topic: Automated_Patching_CloudWatch_Alar
 Uses variables for dashboard name, alarm name, Lambda function name, and SNS topic ARN to make it reusable and configurable at runtime.
 
 It provides automated monitoring and alerting for Lambda errors in a customizable and reusable way.
+
+To execute the terraform code run below command
+
+terraform apply -var-file="terraform.tfvars"  
